@@ -1,0 +1,29 @@
+{
+	"name": "nvg-parser",
+	"version": "0.0.1",
+	"description": "An NVG (Nato Vector Graphics) parser",
+	"main": "dist/nvg-parser.js",
+	"types": "dist/nvg-parser.d.ts",
+	"scripts": {
+		"build": "tsc",
+		"test": "mocha --reporter spec"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/anesdi73/nvg-parser.git"
+	},
+	"keywords": [
+		"NVG"
+	],
+	"author": "anesdi",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/anesdi73/nvg-parser/issues"
+	},
+	"homepage": "https://github.com/anesdi73/nvg-parser#readme",
+	"devDependencies": {
+		"chai": "^4.2.0",
+		"mocha": "^7.0.0",
+		"typescript": "^2.9.2"
+	}
+}
