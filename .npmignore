@@ -1,4 +1,6 @@
-lib
-test
-types
-dist\types
+lib/
+tests/
+types/
+dist/types
+dist/tests/*.d.ts*
+.vscode/
