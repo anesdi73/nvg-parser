@@ -1,6 +1,6 @@
 {
 	"name": "nvg-parser",
-	"version": "0.0.1",
+	"version": "0.1.1",
 	"description": "An NVG (Nato Vector Graphics) parser",
 	"main": "dist/lib/nvg-parser.js",
 	"types": "dist/lib/nvg-parser.d.ts",
