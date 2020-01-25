@@ -1,0 +1,1410 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "definitions": {
+        "arc": {
+            "id": "#arc",
+            "properties": {
+                "cx": {
+                    "description": "Range for longitudes: in decimal degrees using WGS-84 datum, closed interval [-180.0 to 180.0].",
+                    "type": "number"
+                },
+                "cy": {
+                    "description": "Range for latitudes:: in decimal degrees using WGS-84 datum, closed interval [-90.0 to 90.0].",
+                    "type": "number"
+                },
+                "drawable": {
+                    "enum": ["arc"],
+                    "type": "string"
+                },
+                "endangle": {
+                    "description": "All angles are expressed in degrees with a range of [0.0 to 360.0] progressing from 0.0 to 360.0 in the clockwise direction. When the angle indicates direction 0.0 indicates North. If a value is not specified a value of 0.0 is implied.",
+                    "type": "number"
+                },
+                "extendeddata": {"$ref": "#/definitions/extendeddata"},
+                "extension": {
+                    "description": "Extension point for structured community of interest specific content.",
+                    "type": "array"
+                },
+                "href": {"type": "string"},
+                "label": {
+                    "description": "A short text label describing the content.",
+                    "type": "string"
+                },
+                "metadata": {
+                    "description": "named container for NDMS / Dublin Core defined metadata",
+                    "type": "object"
+                },
+                "modifiers": {"$ref": "#/definitions/modifiers"},
+                "rotation": {
+                    "description": "Rotation of the symbol in degrees (0 = north). Counterclockwise",
+                    "type": "number"
+                },
+                "rx": {
+                    "description": "The radius or length expressed in meters. This number should be positive.",
+                    "type": "number"
+                },
+                "ry": {
+                    "description": "The radius or length expressed in meters. This number should be positive.",
+                    "type": "number"
+                },
+                "startangle": {
+                    "description": "All angles are expressed in degrees with a range of [0.0 to 360.0] progressing from 0.0 to 360.0 in the clockwise direction. When the angle indicates direction 0.0 indicates North. If a value is not specified a value of 0.0 is implied.",
+                    "type": "number"
+                },
+                "style": {"$ref": "#/definitions/style"},
+                "symbol": {
+                    "description": "Any valid symbol code Type in the scheme \"chars+number\" : any valid characters. Format: (symbol scheme):(symbol code) Example: app6b:G*C*MGPI--*****",
+                    "type": "string"
+                },
+                "textinfo": {
+                    "description": "Additional human readlable text in addition to @label. Long text content should be placed here.",
+                    "type": "string"
+                },
+                "timespan": {"$ref": "#/definitions/timespan"},
+                "timestamp": {
+                    "description": "comparable point in time (DTG) to represent the last state change of this element",
+                    "type": "string"
+                },
+                "uri": {"type": "string"}
+            },
+            "required": [
+                "cx",
+                "cy",
+                "rx",
+                "ry",
+                "startangle",
+                "endangle",
+                "uri",
+                "drawable"
+            ],
+            "type": "object"
+        },
+        "arcband": {
+            "id": "#arcband",
+            "properties": {
+                "cx": {
+                    "description": "Range for longitudes: in decimal degrees using WGS-84 datum, closed interval [-180.0 to 180.0].",
+                    "type": "number"
+                },
+                "cy": {
+                    "description": "Range for latitudes:: in decimal degrees using WGS-84 datum, closed interval [-90.0 to 90.0].",
+                    "type": "number"
+                },
+                "drawable": {
+                    "enum": ["arcband"],
+                    "type": "string"
+                },
+                "endangle": {
+                    "description": "All angles are expressed in degrees with a range of [0.0 to 360.0] progressing from 0.0 to 360.0 in the clockwise direction. When the angle indicates direction 0.0 indicates North. If a value is not specified a value of 0.0 is implied.",
+                    "type": "number"
+                },
+                "exclusion": {"$ref": "#/definitions/exclusion"},
+                "extendeddata": {"$ref": "#/definitions/extendeddata"},
+                "extension": {
+                    "description": "Extension point for structured community of interest specific content.",
+                    "type": "array"
+                },
+                "href": {"type": "string"},
+                "label": {
+                    "description": "A short text label describing the content.",
+                    "type": "string"
+                },
+                "maxaltitude": {
+                    "description": "Elevation in meters, 0 indicating WGS-84 geoid surface. Positive values indicate an altitude above the surface, negative values indicate a depth below the surface.",
+                    "type": "number"
+                },
+                "maxr": {
+                    "description": "The radius or length expressed in meters. This number should be positive.",
+                    "type": "number"
+                },
+                "metadata": {
+                    "description": "named container for NDMS / Dublin Core defined metadata",
+                    "type": "object"
+                },
+                "minaltitude": {
+                    "description": "Elevation in meters, 0 indicating WGS-84 geoid surface. Positive values indicate an altitude above the surface, negative values indicate a depth below the surface.",
+                    "type": "number"
+                },
+                "minr": {
+                    "description": "The radius or length expressed in meters. This number should be positive.",
+                    "type": "number"
+                },
+                "modifiers": {"$ref": "#/definitions/modifiers"},
+                "startangle": {
+                    "description": "All angles are expressed in degrees with a range of [0.0 to 360.0] progressing from 0.0 to 360.0 in the clockwise direction. When the angle indicates direction 0.0 indicates North. If a value is not specified a value of 0.0 is implied.",
+                    "type": "number"
+                },
+                "style": {"$ref": "#/definitions/style"},
+                "symbol": {
+                    "description": "Any valid symbol code Type in the scheme \"chars+number\" : any valid characters. Format: (symbol scheme):(symbol code) Example: app6b:G*C*MGPI--*****",
+                    "type": "string"
+                },
+                "textinfo": {
+                    "description": "Additional human readlable text in addition to @label. Long text content should be placed here.",
+                    "type": "string"
+                },
+                "timespan": {"$ref": "#/definitions/timespan"},
+                "timestamp": {
+                    "description": "comparable point in time (DTG) to represent the last state change of this element",
+                    "type": "string"
+                },
+                "uri": {"type": "string"}
+            },
+            "required": [
+                "cx",
+                "cy",
+                "minr",
+                "maxr",
+                "startangle",
+                "endangle",
+                "uri",
+                "drawable"
+            ],
+            "type": "object"
+        },
+        "arcbandring": {
+            "id": "#arcbandring",
+            "properties": {
+                "cx": {
+                    "description": "Range for longitudes: in decimal degrees using WGS-84 datum, closed interval [-180.0 to 180.0].",
+                    "type": "number"
+                },
+                "cy": {
+                    "description": "Range for latitudes:: in decimal degrees using WGS-84 datum, closed interval [-90.0 to 90.0].",
+                    "type": "number"
+                },
+                "endangle": {
+                    "description": "All angles are expressed in degrees with a range of [0.0 to 360.0] progressing from 0.0 to 360.0 in the clockwise direction. When the angle indicates direction 0.0 indicates North. If a value is not specified a value of 0.0 is implied.",
+                    "type": "number"
+                },
+                "maxr": {
+                    "description": "The radius or length expressed in meters. This number should be positive.",
+                    "type": "number"
+                },
+                "minr": {
+                    "description": "The radius or length expressed in meters. This number should be positive.",
+                    "type": "number"
+                },
+                "ring": {
+                    "enum": ["arcbandring"],
+                    "type": "string"
+                },
+                "startangle": {
+                    "description": "All angles are expressed in degrees with a range of [0.0 to 360.0] progressing from 0.0 to 360.0 in the clockwise direction. When the angle indicates direction 0.0 indicates North. If a value is not specified a value of 0.0 is implied.",
+                    "type": "number"
+                }
+            },
+            "required": [
+                "cx",
+                "cy",
+                "minr",
+                "maxr",
+                "startangle",
+                "endangle",
+                "ring"
+            ],
+            "type": "object"
+        },
+        "arrow": {
+            "id": "#arrow",
+            "properties": {
+                "drawable": {
+                    "enum": ["arrow"],
+                    "type": "string"
+                },
+                "extendeddata": {"$ref": "#/definitions/extendeddata"},
+                "extension": {
+                    "description": "Extension point for structured community of interest specific content.",
+                    "type": "array"
+                },
+                "href": {"type": "string"},
+                "label": {
+                    "description": "A short text label describing the content.",
+                    "type": "string"
+                },
+                "leg-type": {"$ref": "#/definitions/legtype"},
+                "metadata": {
+                    "description": "named container for NDMS / Dublin Core defined metadata",
+                    "type": "object"
+                },
+                "modifiers": {"$ref": "#/definitions/modifiers"},
+                "points": {"$ref": "#/definitions/points"},
+                "style": {"$ref": "#/definitions/style"},
+                "symbol": {
+                    "description": "Any valid symbol code Type in the scheme \"chars+number\" : any valid characters. Format: (symbol scheme):(symbol code) Example: app6b:G*C*MGPI--*****",
+                    "type": "string"
+                },
+                "textinfo": {
+                    "description": "Additional human readlable text in addition to @label. Long text content should be placed here.",
+                    "type": "string"
+                },
+                "timespan": {"$ref": "#/definitions/timespan"},
+                "timestamp": {
+                    "description": "comparable point in time (DTG) to represent the last state change of this element",
+                    "type": "string"
+                },
+                "uri": {"type": "string"},
+                "width": {
+                    "description": "Width expressed in meters",
+                    "type": "number"
+                }
+            },
+            "required": [
+                "width",
+                "points",
+                "uri",
+                "drawable"
+            ],
+            "type": "object"
+        },
+        "circle": {
+            "id": "#circle",
+            "properties": {
+                "cx": {
+                    "description": "Range for longitudes: in decimal degrees using WGS-84 datum, closed interval [-180.0 to 180.0].",
+                    "type": "number"
+                },
+                "cy": {
+                    "description": "Range for latitudes:: in decimal degrees using WGS-84 datum, closed interval [-90.0 to 90.0].",
+                    "type": "number"
+                },
+                "drawable": {
+                    "enum": ["circle"],
+                    "type": "string"
+                },
+                "exclusion": {"$ref": "#/definitions/exclusion"},
+                "extendeddata": {"$ref": "#/definitions/extendeddata"},
+                "extension": {
+                    "description": "Extension point for structured community of interest specific content.",
+                    "type": "array"
+                },
+                "href": {"type": "string"},
+                "label": {
+                    "description": "A short text label describing the content.",
+                    "type": "string"
+                },
+                "maxaltitude": {
+                    "description": "Elevation in meters, 0 indicating WGS-84 geoid surface. Positive values indicate an altitude above the surface, negative values indicate a depth below the surface.",
+                    "type": "number"
+                },
+                "metadata": {
+                    "description": "named container for NDMS / Dublin Core defined metadata",
+                    "type": "object"
+                },
+                "minaltitude": {
+                    "description": "Elevation in meters, 0 indicating WGS-84 geoid surface. Positive values indicate an altitude above the surface, negative values indicate a depth below the surface.",
+                    "type": "number"
+                },
+                "modifiers": {"$ref": "#/definitions/modifiers"},
+                "r": {
+                    "description": "The radius or length expressed in meters. This number should be positive.",
+                    "type": "number"
+                },
+                "style": {"$ref": "#/definitions/style"},
+                "symbol": {
+                    "description": "Any valid symbol code Type in the scheme \"chars+number\" : any valid characters. Format: (symbol scheme):(symbol code) Example: app6b:G*C*MGPI--*****",
+                    "type": "string"
+                },
+                "textinfo": {
+                    "description": "Additional human readlable text in addition to @label. Long text content should be placed here.",
+                    "type": "string"
+                },
+                "timespan": {"$ref": "#/definitions/timespan"},
+                "timestamp": {
+                    "description": "comparable point in time (DTG) to represent the last state change of this element",
+                    "type": "string"
+                },
+                "uri": {"type": "string"}
+            },
+            "required": [
+                "cx",
+                "cy",
+                "r",
+                "uri",
+                "drawable"
+            ],
+            "type": "object"
+        },
+        "circularring": {
+            "id": "#circularring",
+            "properties": {
+                "cx": {
+                    "description": "Range for longitudes: in decimal degrees using WGS-84 datum, closed interval [-180.0 to 180.0].",
+                    "type": "number"
+                },
+                "cy": {
+                    "description": "Range for latitudes:: in decimal degrees using WGS-84 datum, closed interval [-90.0 to 90.0].",
+                    "type": "number"
+                },
+                "r": {
+                    "description": "The radius or length expressed in meters. This number should be positive.",
+                    "type": "number"
+                },
+                "ring": {
+                    "enum": ["circularring"],
+                    "type": "string"
+                }
+            },
+            "required": [
+                "cx",
+                "cy",
+                "r",
+                "ring"
+            ],
+            "type": "object"
+        },
+        "composite": {
+            "id": "#composite",
+            "properties": {
+                "drawable": {
+                    "enum": ["composite"],
+                    "type": "string"
+                },
+                "extendeddata": {"$ref": "#/definitions/extendeddata"},
+                "extension": {
+                    "description": "Extension point for structured community of interest specific content.",
+                    "type": "array"
+                },
+                "href": {"type": "string"},
+                "items": {
+                    "items": {"oneOf": [
+                        {"$ref": "#/definitions/arc"},
+                        {"$ref": "#/definitions/arcband"},
+                        {"$ref": "#/definitions/arrow"},
+                        {"$ref": "#/definitions/circle"},
+                        {"$ref": "#/definitions/corridor"},
+                        {"$ref": "#/definitions/ellipse"},
+                        {"$ref": "#/definitions/multipoint"},
+                        {"$ref": "#/definitions/orbit"},
+                        {"$ref": "#/definitions/point"},
+                        {"$ref": "#/definitions/polygon"},
+                        {"$ref": "#/definitions/polyline"},
+                        {"$ref": "#/definitions/rect"},
+                        {"$ref": "#/definitions/text"}
+                    ]},
+                    "type": "array"
+                },
+                "label": {
+                    "description": "A short text label describing the content.",
+                    "type": "string"
+                },
+                "metadata": {
+                    "description": "named container for NDMS / Dublin Core defined metadata",
+                    "type": "object"
+                },
+                "modifiers": {"$ref": "#/definitions/modifiers"},
+                "style": {"$ref": "#/definitions/style"},
+                "symbol": {
+                    "description": "Any valid symbol code Type in the scheme \"chars+number\" : any valid characters. Format: (symbol scheme):(symbol code) Example: app6b:G*C*MGPI--*****",
+                    "type": "string"
+                },
+                "textinfo": {
+                    "description": "Additional human readlable text in addition to @label. Long text content should be placed here.",
+                    "type": "string"
+                },
+                "timespan": {"$ref": "#/definitions/timespan"},
+                "timestamp": {
+                    "description": "comparable point in time (DTG) to represent the last state change of this element",
+                    "type": "string"
+                },
+                "uri": {"type": "string"}
+            },
+            "required": [
+                "uri",
+                "drawable"
+            ],
+            "title": "Content unbreakable composition made of basic shapes (no recursion)",
+            "type": "object"
+        },
+        "content-item": {
+            "id": "#content-item",
+            "properties": {
+                "drawable": {
+                    "enum": ["content-item"],
+                    "type": "string"
+                },
+                "extendeddata": {"$ref": "#/definitions/extendeddata"},
+                "extension": {
+                    "description": "Extension point for structured community of interest specific content.",
+                    "type": "array"
+                },
+                "href": {"type": "string"},
+                "label": {
+                    "description": "A short text label describing the content.",
+                    "type": "string"
+                },
+                "metadata": {
+                    "description": "named container for NDMS / Dublin Core defined metadata",
+                    "type": "object"
+                },
+                "modifiers": {"$ref": "#/definitions/modifiers"},
+                "style": {"$ref": "#/definitions/style"},
+                "symbol": {
+                    "description": "Any valid symbol code Type in the scheme \"chars+number\" : any valid characters. Format: (symbol scheme):(symbol code) Example: app6b:G*C*MGPI--*****",
+                    "type": "string"
+                },
+                "textinfo": {
+                    "description": "Additional human readlable text in addition to @label. Long text content should be placed here.",
+                    "type": "string"
+                },
+                "timespan": {"$ref": "#/definitions/timespan"},
+                "timestamp": {
+                    "description": "comparable point in time (DTG) to represent the last state change of this element",
+                    "type": "string"
+                },
+                "uri": {"type": "string"}
+            },
+            "required": [
+                "uri",
+                "drawable"
+            ],
+            "title": "Symbolized content, including unknown (default rendering).",
+            "type": "object"
+        },
+        "corridor": {
+            "id": "#corridor",
+            "properties": {
+                "drawable": {
+                    "enum": ["corridor"],
+                    "type": "string"
+                },
+                "extendeddata": {"$ref": "#/definitions/extendeddata"},
+                "extension": {
+                    "description": "Extension point for structured community of interest specific content.",
+                    "type": "array"
+                },
+                "href": {"type": "string"},
+                "label": {
+                    "description": "A short text label describing the content.",
+                    "type": "string"
+                },
+                "leg-type": {"$ref": "#/definitions/legtype"},
+                "maxaltitude": {
+                    "description": "Elevation in meters, 0 indicating WGS-84 geoid surface. Positive values indicate an altitude above the surface, negative values indicate a depth below the surface.",
+                    "type": "number"
+                },
+                "metadata": {
+                    "description": "named container for NDMS / Dublin Core defined metadata",
+                    "type": "object"
+                },
+                "minaltitude": {
+                    "description": "Elevation in meters, 0 indicating WGS-84 geoid surface. Positive values indicate an altitude above the surface, negative values indicate a depth below the surface.",
+                    "type": "number"
+                },
+                "modifiers": {"$ref": "#/definitions/modifiers"},
+                "points": {"$ref": "#/definitions/points"},
+                "style": {"$ref": "#/definitions/style"},
+                "symbol": {
+                    "description": "Any valid symbol code Type in the scheme \"chars+number\" : any valid characters. Format: (symbol scheme):(symbol code) Example: app6b:G*C*MGPI--*****",
+                    "type": "string"
+                },
+                "textinfo": {
+                    "description": "Additional human readlable text in addition to @label. Long text content should be placed here.",
+                    "type": "string"
+                },
+                "timespan": {"$ref": "#/definitions/timespan"},
+                "timestamp": {
+                    "description": "comparable point in time (DTG) to represent the last state change of this element",
+                    "type": "string"
+                },
+                "uri": {"type": "string"},
+                "width": {
+                    "description": "Width expressed in meters",
+                    "type": "number"
+                }
+            },
+            "required": [
+                "width",
+                "points",
+                "uri",
+                "drawable"
+            ],
+            "type": "object"
+        },
+        "ellipse": {
+            "id": "#ellipse",
+            "properties": {
+                "cx": {
+                    "description": "Range for longitudes: in decimal degrees using WGS-84 datum, closed interval [-180.0 to 180.0].",
+                    "type": "number"
+                },
+                "cy": {
+                    "description": "Range for latitudes:: in decimal degrees using WGS-84 datum, closed interval [-90.0 to 90.0].",
+                    "type": "number"
+                },
+                "drawable": {
+                    "enum": ["ellipse"],
+                    "type": "string"
+                },
+                "exclusion": {"$ref": "#/definitions/exclusion"},
+                "extendeddata": {"$ref": "#/definitions/extendeddata"},
+                "extension": {
+                    "description": "Extension point for structured community of interest specific content.",
+                    "type": "array"
+                },
+                "href": {"type": "string"},
+                "label": {
+                    "description": "A short text label describing the content.",
+                    "type": "string"
+                },
+                "maxaltitude": {
+                    "description": "Elevation in meters, 0 indicating WGS-84 geoid surface. Positive values indicate an altitude above the surface, negative values indicate a depth below the surface.",
+                    "type": "number"
+                },
+                "metadata": {
+                    "description": "named container for NDMS / Dublin Core defined metadata",
+                    "type": "object"
+                },
+                "minaltitude": {
+                    "description": "Elevation in meters, 0 indicating WGS-84 geoid surface. Positive values indicate an altitude above the surface, negative values indicate a depth below the surface.",
+                    "type": "number"
+                },
+                "modifiers": {"$ref": "#/definitions/modifiers"},
+                "rotation": {
+                    "description": "Rotation of the symbol in degrees (0 = north). Counterclockwise",
+                    "type": "number"
+                },
+                "rx": {
+                    "description": "The radius or length expressed in meters. This number should be positive.",
+                    "type": "number"
+                },
+                "ry": {
+                    "description": "The radius or length expressed in meters. This number should be positive.",
+                    "type": "number"
+                },
+                "style": {"$ref": "#/definitions/style"},
+                "symbol": {
+                    "description": "Any valid symbol code Type in the scheme \"chars+number\" : any valid characters. Format: (symbol scheme):(symbol code) Example: app6b:G*C*MGPI--*****",
+                    "type": "string"
+                },
+                "textinfo": {
+                    "description": "Additional human readlable text in addition to @label. Long text content should be placed here.",
+                    "type": "string"
+                },
+                "timespan": {"$ref": "#/definitions/timespan"},
+                "timestamp": {
+                    "description": "comparable point in time (DTG) to represent the last state change of this element",
+                    "type": "string"
+                },
+                "uri": {"type": "string"}
+            },
+            "required": [
+                "cx",
+                "cy",
+                "rx",
+                "ry",
+                "uri",
+                "drawable"
+            ],
+            "type": "object"
+        },
+        "ellipticring": {
+            "id": "#ellipticring",
+            "properties": {
+                "cx": {
+                    "description": "Range for longitudes: in decimal degrees using WGS-84 datum, closed interval [-180.0 to 180.0].",
+                    "type": "number"
+                },
+                "cy": {
+                    "description": "Range for latitudes:: in decimal degrees using WGS-84 datum, closed interval [-90.0 to 90.0].",
+                    "type": "number"
+                },
+                "rotation": {
+                    "description": "Rotation of the symbol in degrees (0 = north). Counterclockwise",
+                    "type": "number"
+                },
+                "rx": {
+                    "description": "The radius or length expressed in meters. This number should be positive.",
+                    "type": "number"
+                },
+                "ry": {
+                    "description": "The radius or length expressed in meters. This number should be positive.",
+                    "type": "number"
+                },
+                "ring": {
+                    "enum": ["ellipticring"],
+                    "type": "string"
+                }            },
+            "required": [
+                "cx",
+                "cy",
+                "rx",
+                "ry",
+                "ring"
+            ],
+            "type": "object"
+        },
+        "exclusion": {
+            "description": "Exclusion areas",
+            "id": "#exclusion",
+            "items": [
+                {"$ref": "#/definitions/linearring"},
+                {"$ref": "#/definitions/arcbandring"},
+                {"$ref": "#/definitions/rectangularring"},
+                {"$ref": "#/definitions/ellipticring"},
+                {"$ref": "#/definitions/circularring"}
+            ],
+            "type": "array"
+        },
+        "extendeddata": {
+            "id": "#extendeddata",
+            "properties": {
+                "schemaRef": {"type": "string"},
+                "simpledata": {
+                    "items": {"$ref": "#/definitions/simpledata"},
+                    "type": "array"
+                },
+                "section": {
+                    "items": {"$ref": "#/definitions/section"},
+                    "type": "array"
+                }
+            },
+            "required": ["schemaref"],
+            "type": "object"
+        },
+        "g": {
+            "id": "#g",
+            "properties": {
+                "drawable": {
+                    "enum": ["g"],
+                    "type": "string"
+                },
+                "extendeddata": {"$ref": "#/definitions/extendeddata"},
+                "extension": {
+                    "description": "Extension point for structured community of interest specific content.",
+                    "type": "array"
+                },
+                "href": {"type": "string"},
+                "items": {
+                    "items": {"oneOf": [
+                        {"$ref": "#/definitions/arc"},
+                        {"$ref": "#/definitions/arcband"},
+                        {"$ref": "#/definitions/arrow"},
+                        {"$ref": "#/definitions/circle"},
+                        {"$ref": "#/definitions/composite"},
+                        {"$ref": "#/definitions/corridor"},
+                        {"$ref": "#/definitions/ellipse"},
+                        {"$ref": "#/definitions/g"},
+                        {"$ref": "#/definitions/multipoint"},
+                        {"$ref": "#/definitions/orbit"},
+                        {"$ref": "#/definitions/point"},
+                        {"$ref": "#/definitions/polygon"},
+                        {"$ref": "#/definitions/polyline"},
+                        {"$ref": "#/definitions/rect"},
+                        {"$ref": "#/definitions/content-item"},
+                        {"$ref": "#/definitions/text"}
+                    ]},
+                    "type": "array"
+                },
+                "label": {
+                    "description": "A short text label describing the content.",
+                    "type": "string"
+                },
+                "metadata": {
+                    "description": "named container for NDMS / Dublin Core defined metadata",
+                    "type": "object"
+                },
+                "style": {"$ref": "#/definitions/style"},
+                "textinfo": {
+                    "description": "Additional human readlable text in addition to @label. Long text content should be placed here.",
+                    "type": "string"
+                },
+                "timespan": {"$ref": "#/definitions/timespan"},
+                "timestamp": {
+                    "description": "comparable point in time (DTG) to represent the last state change of this element",
+                    "type": "string"
+                },
+                "uri": {"type": "string"}
+            },
+            "required": [
+                "uri",
+                "drawable"
+            ],
+            "title": "Content grouping",
+            "type": "object"
+        },
+        "legtype": {
+            "enum": [
+                "rhumb-line",
+                "great-circle"
+            ],
+            "type": "string"
+        },
+        "linearring": {
+            "id": "#linearring",
+            "properties": {
+                "leg-type": {"$ref": "#/definitions/legtype"},
+                "points": {"$ref": "#/definitions/points"},
+                "ring": {
+                    "enum": ["linearring"],
+                    "type": "string"
+                }
+            },
+            "required": [
+                "points",
+                "ring"
+            ],
+            "type": "object"
+        },
+        "lon_lat": {
+            "description": "[x, y]",
+            "id": "#lon_lat",
+            "items": {"type": "number"},
+            "maxItems": 2,
+            "minItems": 2,
+            "type": "array"
+        },
+        "modifiers": {
+            "description": "Symbol modifiers",
+            "id": "modifiers",
+            "type": "object"
+        },
+        "multipoint": {
+            "id": "#multipoint",
+            "properties": {
+                "drawable": {
+                    "enum": ["multipoint"],
+                    "type": "string"
+                },
+                "extendeddata": {"$ref": "#/definitions/extendeddata"},
+                "extension": {
+                    "description": "Extension point for structured community of interest specific content.",
+                    "type": "array"
+                },
+                "href": {"type": "string"},
+                "label": {
+                    "description": "A short text label describing the content.",
+                    "type": "string"
+                },
+                "metadata": {
+                    "description": "named container for NDMS / Dublin Core defined metadata",
+                    "type": "object"
+                },
+                "modifiers": {"$ref": "#/definitions/modifiers"},
+                "points": {"$ref": "#/definitions/points"},
+                "style": {"$ref": "#/definitions/style"},
+                "symbol": {
+                    "description": "Any valid symbol code Type in the scheme \"chars+number\" : any valid characters. Format: (symbol scheme):(symbol code) Example: app6b:G*C*MGPI--*****",
+                    "type": "string"
+                },
+                "textinfo": {
+                    "description": "Additional human readlable text in addition to @label. Long text content should be placed here.",
+                    "type": "string"
+                },
+                "timespan": {"$ref": "#/definitions/timespan"},
+                "timestamp": {
+                    "description": "comparable point in time (DTG) to represent the last state change of this element",
+                    "type": "string"
+                },
+                "uri": {"type": "string"}
+            },
+            "required": [
+                "points",
+                "uri",
+                "drawable"
+            ],
+            "type": "object"
+        },
+        "orbit": {
+            "id": "#orbit",
+            "properties": {
+                "drawable": {
+                    "enum": ["orbit"],
+                    "type": "string"
+                },
+                "extendeddata": {"$ref": "#/definitions/extendeddata"},
+                "extension": {
+                    "description": "Extension point for structured community of interest specific content.",
+                    "type": "array"
+                },
+                "href": {"type": "string"},
+                "label": {
+                    "description": "A short text label describing the content.",
+                    "type": "string"
+                },
+                "maxaltitude": {
+                    "description": "Elevation in meters, 0 indicating WGS-84 geoid surface. Positive values indicate an altitude above the surface, negative values indicate a depth below the surface.",
+                    "type": "number"
+                },
+                "metadata": {
+                    "description": "named container for NDMS / Dublin Core defined metadata",
+                    "type": "object"
+                },
+                "minaltitude": {
+                    "description": "Elevation in meters, 0 indicating WGS-84 geoid surface. Positive values indicate an altitude above the surface, negative values indicate a depth below the surface.",
+                    "type": "number"
+                },
+                "modifiers": {"$ref": "#/definitions/modifiers"},
+                "points": {"$ref": "#/definitions/points"},
+                "style": {"$ref": "#/definitions/style"},
+                "symbol": {
+                    "description": "Any valid symbol code Type in the scheme \"chars+number\" : any valid characters. Format: (symbol scheme):(symbol code) Example: app6b:G*C*MGPI--*****",
+                    "type": "string"
+                },
+                "textinfo": {
+                    "description": "Additional human readlable text in addition to @label. Long text content should be placed here.",
+                    "type": "string"
+                },
+                "timespan": {"$ref": "#/definitions/timespan"},
+                "timestamp": {
+                    "description": "comparable point in time (DTG) to represent the last state change of this element",
+                    "type": "string"
+                },
+                "uri": {"type": "string"},
+                "width": {
+                    "description": "Width expressed in meters",
+                    "type": "number"
+                }
+            },
+            "required": [
+                "width",
+                "points",
+                "uri",
+                "drawable"
+            ],
+            "type": "object"
+        },
+        "point": {
+            "id": "#point",
+            "properties": {
+                "course": {
+                    "description": "Course in degrees (0 = north). Clockwise",
+                    "type": "number"
+                },
+                "drawable": {
+                    "enum": ["point"],
+                    "type": "string"
+                },
+                "extendeddata": {"$ref": "#/definitions/extendeddata"},
+                "extension": {
+                    "description": "Extension point for structured community of interest specific content.",
+                    "type": "array"
+                },
+                "href": {"type": "string"},
+                "label": {
+                    "description": "A short text label describing the content.",
+                    "type": "string"
+                },
+                "metadata": {
+                    "description": "named container for NDMS / Dublin Core defined metadata",
+                    "type": "object"
+                },
+                "modifiers": {"$ref": "#/definitions/modifiers"},
+                "rotation": {
+                    "description": "Rotation of the symbol in degrees (0 = north). Counterclockwise",
+                    "type": "number"
+                },
+                "speed": {
+                    "description": "Speed in kilometers per hour (>= 0)",
+                    "type": "number"
+                },
+                "style": {"$ref": "#/definitions/style"},
+                "symbol": {
+                    "description": "Any valid symbol code Type in the scheme \"chars+number\" : any valid characters. Format: (symbol scheme):(symbol code) Example: app6b:G*C*MGPI--*****",
+                    "type": "string"
+                },
+                "textinfo": {
+                    "description": "Additional human readlable text in addition to @label. Long text content should be placed here.",
+                    "type": "string"
+                },
+                "timespan": {"$ref": "#/definitions/timespan"},
+                "timestamp": {
+                    "description": "comparable point in time (DTG) to represent the last state change of this element",
+                    "type": "string"
+                },
+                "uri": {"type": "string"},
+                "x": {
+                    "description": "Range for longitudes: in decimal degrees using WGS-84 datum, closed interval [-180.0 to 180.0].",
+                    "type": "number"
+                },
+                "y": {
+                    "description": "Range for latitudes:: in decimal degrees using WGS-84 datum, closed interval [-90.0 to 90.0].",
+                    "type": "number"
+                },
+                "z": {
+                    "description": "Elevation in meters, 0 indicating WGS-84 geoid surface. Positive values indicate an altitude above the surface, negative values indicate a depth below the surface.",
+                    "type": "number"
+                }
+            },
+            "required": [
+                "x",
+                "y",
+                "uri",
+                "drawable"
+            ],
+            "type": "object"
+        },
+        "points": {
+            "description": "A array of geo locations [(x, y), ...]",
+            "id": "#points",
+            "items": {"$ref": "#/definitions/lon_lat"},
+            "minItems": 2,
+            "type": "array"
+        },
+        "polygon": {
+            "id": "#polygon",
+            "properties": {
+                "drawable": {
+                    "enum": ["polygon"],
+                    "type": "string"
+                },
+                "exclusion": {"$ref": "#/definitions/exclusion"},
+                "extendeddata": {"$ref": "#/definitions/extendeddata"},
+                "extension": {
+                    "description": "Extension point for structured community of interest specific content.",
+                    "type": "array"
+                },
+                "href": {"type": "string"},
+                "label": {
+                    "description": "A short text label describing the content.",
+                    "type": "string"
+                },
+                "leg-type": {"$ref": "#/definitions/legtype"},
+                "maxaltitude": {
+                    "description": "Elevation in meters, 0 indicating WGS-84 geoid surface. Positive values indicate an altitude above the surface, negative values indicate a depth below the surface.",
+                    "type": "number"
+                },
+                "metadata": {
+                    "description": "named container for NDMS / Dublin Core defined metadata",
+                    "type": "object"
+                },
+                "minaltitude": {
+                    "description": "Elevation in meters, 0 indicating WGS-84 geoid surface. Positive values indicate an altitude above the surface, negative values indicate a depth below the surface.",
+                    "type": "number"
+                },
+                "modifiers": {"$ref": "#/definitions/modifiers"},
+                "points": {"$ref": "#/definitions/points"},
+                "style": {"$ref": "#/definitions/style"},
+                "symbol": {
+                    "description": "Any valid symbol code Type in the scheme \"chars+number\" : any valid characters. Format: (symbol scheme):(symbol code) Example: app6b:G*C*MGPI--*****",
+                    "type": "string"
+                },
+                "textinfo": {
+                    "description": "Additional human readlable text in addition to @label. Long text content should be placed here.",
+                    "type": "string"
+                },
+                "timespan": {"$ref": "#/definitions/timespan"},
+                "timestamp": {
+                    "description": "comparable point in time (DTG) to represent the last state change of this element",
+                    "type": "string"
+                },
+                "uri": {"type": "string"}
+            },
+            "required": [
+                "points",
+                "uri",
+                "drawable"
+            ],
+            "type": "object"
+        },
+        "polyline": {
+            "id": "#polyline",
+            "properties": {
+                "drawable": {
+                    "enum": ["polyline"],
+                    "type": "string"
+                },
+                "extendeddata": {"$ref": "#/definitions/extendeddata"},
+                "extension": {
+                    "description": "Extension point for structured community of interest specific content.",
+                    "type": "array"
+                },
+                "href": {"type": "string"},
+                "label": {
+                    "description": "A short text label describing the content.",
+                    "type": "string"
+                },
+                "leg-type": {"$ref": "#/definitions/legtype"},
+                "metadata": {
+                    "description": "named container for NDMS / Dublin Core defined metadata",
+                    "type": "object"
+                },
+                "modifiers": {"$ref": "#/definitions/modifiers"},
+                "points": {"$ref": "#/definitions/points"},
+                "style": {"$ref": "#/definitions/style"},
+                "symbol": {
+                    "description": "Any valid symbol code Type in the scheme \"chars+number\" : any valid characters. Format: (symbol scheme):(symbol code) Example: app6b:G*C*MGPI--*****",
+                    "type": "string"
+                },
+                "textinfo": {
+                    "description": "Additional human readlable text in addition to @label. Long text content should be placed here.",
+                    "type": "string"
+                },
+                "timespan": {"$ref": "#/definitions/timespan"},
+                "timestamp": {
+                    "description": "comparable point in time (DTG) to represent the last state change of this element",
+                    "type": "string"
+                },
+                "uri": {"type": "string"}
+            },
+            "required": [
+                "points",
+                "uri",
+                "drawable"
+            ],
+            "type": "object"
+        },
+        "rect": {
+            "id": "#rect",
+            "properties": {
+                "cx": {
+                    "description": "Range for longitudes: in decimal degrees using WGS-84 datum, closed interval [-180.0 to 180.0].",
+                    "type": "number"
+                },
+                "cy": {
+                    "description": "Range for latitudes:: in decimal degrees using WGS-84 datum, closed interval [-90.0 to 90.0].",
+                    "type": "number"
+                },
+                "drawable": {
+                    "enum": ["rect"],
+                    "type": "string"
+                },
+                "exclusion": {"$ref": "#/definitions/exclusion"},
+                "extendeddata": {"$ref": "#/definitions/extendeddata"},
+                "extension": {
+                    "description": "Extension point for structured community of interest specific content.",
+                    "type": "array"
+                },
+                "href": {"type": "string"},
+                "label": {
+                    "description": "A short text label describing the content.",
+                    "type": "string"
+                },
+                "maxaltitude": {
+                    "description": "Elevation in meters, 0 indicating WGS-84 geoid surface. Positive values indicate an altitude above the surface, negative values indicate a depth below the surface.",
+                    "type": "number"
+                },
+                "metadata": {
+                    "description": "named container for NDMS / Dublin Core defined metadata",
+                    "type": "object"
+                },
+                "minaltitude": {
+                    "description": "Elevation in meters, 0 indicating WGS-84 geoid surface. Positive values indicate an altitude above the surface, negative values indicate a depth below the surface.",
+                    "type": "number"
+                },
+                "modifiers": {"$ref": "#/definitions/modifiers"},
+                "rotation": {
+                    "description": "Rotation of the symbol in degrees (0 = north). Counterclockwise",
+                    "type": "number"
+                },
+                "rx": {
+                    "description": "The radius or length expressed in meters. This number should be positive.",
+                    "type": "number"
+                },
+                "ry": {
+                    "description": "The radius or length expressed in meters. This number should be positive.",
+                    "type": "number"
+                },
+                "style": {"$ref": "#/definitions/style"},
+                "symbol": {
+                    "description": "Any valid symbol code Type in the scheme \"chars+number\" : any valid characters. Format: (symbol scheme):(symbol code) Example: app6b:G*C*MGPI--*****",
+                    "type": "string"
+                },
+                "textinfo": {
+                    "description": "Additional human readlable text in addition to @label. Long text content should be placed here.",
+                    "type": "string"
+                },
+                "timespan": {"$ref": "#/definitions/timespan"},
+                "timestamp": {
+                    "description": "comparable point in time (DTG) to represent the last state change of this element",
+                    "type": "string"
+                },
+                "uri": {"type": "string"}
+            },
+            "required": [
+                "cx",
+                "cy",
+                "rx",
+                "ry",
+                "uri",
+                "drawable"
+            ],
+            "title": "Rectangle with true ground measurement (identical ground distance for opposite sides of the rectangle)",
+            "type": "object"
+        },
+        "rectangularring": {
+            "id": "#rectangularring",
+            "properties": {
+                "cx": {
+                    "description": "Range for longitudes: in decimal degrees using WGS-84 datum, closed interval [-180.0 to 180.0].",
+                    "type": "number"
+                },
+                "cy": {
+                    "description": "Range for latitudes:: in decimal degrees using WGS-84 datum, closed interval [-90.0 to 90.0].",
+                    "type": "number"
+                },
+                "ring": {
+                    "enum": ["rectangularring"],
+                    "type": "string"
+                },
+                "rotation": {
+                    "description": "Rotation of the symbol in degrees (0 = north). Counterclockwise",
+                    "type": "number"
+                },
+                "rx": {
+                    "description": "The radius or length expressed in meters. This number should be positive.",
+                    "type": "number"
+                },
+                "ry": {
+                    "description": "The radius or length expressed in meters. This number should be positive.",
+                    "type": "number"
+                }
+            },
+            "required": [
+                "cx",
+                "cy",
+                "rx",
+                "ry",
+                "ring"
+            ],
+            "type": "object"
+        },
+        "schema": {
+            "id": "#schema",
+            "properties": {
+                "schemaId": {"type": "string"},
+                "simplefield": {
+                    "items": {"$ref": "#/definitions/simplefield"},
+                    "type": "array"
+                }
+            },
+            "required": ["schemaid"],
+            "type": "object"
+        },
+        "simpledata": {
+            "id": "#simpledata",
+            "properties": {
+                "key": {"type": "string"},
+                "value": {"type": "string"}
+            },
+            "required": ["key"],
+            "type": "object"
+        },
+        "section": {
+            "id": "#section",
+            "properties": {
+                "label": {"type": "string"},
+                "schemaRef": {"type": "string"},
+                "simpledata": {
+                    "items": {"$ref": "#/definitions/simpledata"},
+                    "type": "array"
+                }
+            },
+            "required": [
+                "label",
+                "schemaref"
+            ],
+            "type": "object"
+        },
+        "simplefield": {
+            "id": "#simplefield",
+            "properties": {
+                "description": {"type": "string"},
+                "id": {"type": "string"},
+                "label": {"type": "string"},
+                "type": {"type": "string"},
+                "unit": {"type": "string"}
+            },
+            "required": [
+                "id",
+                "type"
+            ],
+            "type": "object"
+        },
+        "style": {
+            "id": "style",
+            "properties": {
+                "fill": {
+                    "description": "the color to fill an area with expressed as an hexadecimal RGB value. If the area should not be filled, the value is none, which is the default value.",
+                    "type": "string"
+                },
+                "fill-opacity": {
+                    "description": "the opacity of an area that is filled expressed as a decimal value between 0 (completely transparent) and 1 (opaque). The default value is 1, opaque.",
+                    "type": "number"
+                },
+                "fill-pattern": {
+                    "description": "a pattern to fill the area with using the color defined by \"fill\". Valid values are: Dotted, MediumDotted, VerticalLine, HorizontalLine, DiagonalUpwardLine, DiagonalDownwardLine, DottedGrid, Grid, OutlinedDiamond, SolidDiamond, DiagonalBrick.",
+                    "type": "string"
+                },
+                "font-color": {
+                    "description": "the color to render the text in expressed as an hexadecimal RGB value. The default value is #000000 (black).",
+                    "type": "string"
+                },
+                "font-family": {
+                    "description": "the name of the font to use. The default font-family is system specific, use this attribute if you require a specific font. Keep in mind that the font may not exist in the system rendering the document.",
+                    "type": "string"
+                },
+                "font-size": {
+                    "description": "height[unit] defaulted to px or specified physical units for scale-driven text size. Possible values are: px (pixels, default), m (meters), km (kilometers), nm (nautical miles). example: font-size:16px or font-size:12km",
+                    "type": "string"
+                },
+                "font-style": {
+                    "description": "the style of the font with the following possible values: normal (default), italic",
+                    "type": "string"
+                },
+                "font-weight": {
+                    "description": "the weight of the font with the following possible values: normal (default), bold",
+                    "type": "string"
+                },
+                "line-pattern-begin": {
+                    "description": "(first point): Line pattern valid values are: None, Arrow, OpenArrow, StealthArrow, DiamondArrow, OvalArrow",
+                    "type": "string"
+                },
+                "line-pattern-begin-size": {
+                    "description": "a value from 1 to 3. Line pattern size default '2' to 3x stroke size. Other scaling for value '1' (2x of stroke size) and value '3' (5x of stroke size).",
+                    "type": "integer"
+                },
+                "line-pattern-end": {
+                    "description": "(last point): Line pattern valid values are: None, Arrow, OpenArrow, StealthArrow, DiamondArrow, OvalArrow",
+                    "type": "string"
+                },
+                "line-pattern-end-size": {
+                    "description": "a value from 1 to 3, Line pattern size default '2' to 3x stroke size. Other scaling for value '1' (2x of stroke size) and value '3' (5x of stroke size).",
+                    "type": "integer"
+                },
+                "stroke": {
+                    "description": "the color of a line expressed as an hexadecimal RGB value. Default value is #000000 (black).",
+                    "type": "string"
+                },
+                "stroke-dash": {
+                    "description": " the dashed representation of the line with the following valid values: none - (default) Indicates that no dashing is used (a solid line), <dasharray> - A list of comma-separated <length>'s specified in pixels. All <length>'s must positive values greater than zero. For example: stroke-dash='5,3,2'",
+                    "type": "string"
+                },
+                "stroke-opacity": {
+                    "description": "the opacity of a line expressed as a decimal value between 0 (completely transparent) and 1 (opaque). Default value is 1.0 (opaque).",
+                    "type": "number"
+                },
+                "stroke-width": {
+                    "description": "the width of a line expressed in number of pixels. Default value is 1.",
+                    "type": "integer"
+                },
+                "text-align": {
+                    "description": "Specifies the alignment of the text with respect to the reference point (x, y) prior to rotation. Valid values are: left, right, center (default).",
+                    "type": "string"
+                },
+                "vertical-align": {
+                    "description": "Specifies the vertical alignment of the text with respect to the reference point (x, y) prior to rotation. Valid values are: top, middle (default), bottom.",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "text": {
+            "id": "#text",
+            "properties": {
+                "content": {"type": "string"},
+                "drawable": {
+                    "enum": ["text"],
+                    "type": "string"
+                },
+                "extendeddata": {"$ref": "#/definitions/extendeddata"},
+                "extension": {
+                    "description": "Extension point for structured community of interest specific content.",
+                    "type": "array"
+                },
+                "href": {"type": "string"},
+                "label": {
+                    "description": "A short text label describing the content.",
+                    "type": "string"
+                },
+                "metadata": {
+                    "description": "named container for NDMS / Dublin Core defined metadata",
+                    "type": "object"
+                },
+                "rotation": {
+                    "description": "Rotation of the symbol in degrees (0 = north). Counterclockwise",
+                    "type": "number"
+                },
+                "style": {"$ref": "#/definitions/style"},
+                "textinfo": {
+                    "description": "Additional human readlable text in addition to @label. Long text content should be placed here.",
+                    "type": "string"
+                },
+                "timespan": {"$ref": "#/definitions/timespan"},
+                "timestamp": {
+                    "description": "comparable point in time (DTG) to represent the last state change of this element",
+                    "type": "string"
+                },
+                "uri": {"type": "string"},
+                "x": {
+                    "description": "Range for longitudes: in decimal degrees using WGS-84 datum, closed interval [-180.0 to 180.0].",
+                    "type": "number"
+                },
+                "y": {
+                    "description": "Range for latitudes:: in decimal degrees using WGS-84 datum, closed interval [-90.0 to 90.0].",
+                    "type": "number"
+                }
+            },
+            "required": [
+                "x",
+                "y",
+                "uri",
+                "content",
+                "drawable"
+            ],
+            "type": "object"
+        },
+        "timespan": {
+            "description": "A pair of items (<begin> and <end>, each one is optional) to define a show/hide period (based on strict DTG) for the shape as defined by KML TimeSpan. Timezone information is required.",
+            "id": "timespan",
+            "properties": {
+                "begin": {
+                    "description": "",
+                    "type": "string"
+                },
+                "end": {
+                    "description": "",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    },
+    "description": "JSON encoding of the NATO Vector Graphics (NVG) latest v2.0.x data format.",
+    "id": "https://tide.act.nato.int/schemas/2012/10/nvg/js/json-schema/",
+    "properties": {
+        "document": {
+            "enum": ["nvg"],
+            "type": "string"
+        },
+        "extendeddata": {"$ref": "#/definitions/extendeddata"},
+        "extension": {"type": "array"},
+        "items": {
+            "items": {"oneOf": [
+                {"$ref": "#/definitions/arc"},
+                {"$ref": "#/definitions/arcband"},
+                {"$ref": "#/definitions/arrow"},
+                {"$ref": "#/definitions/circle"},
+                {"$ref": "#/definitions/composite"},
+                {"$ref": "#/definitions/corridor"},
+                {"$ref": "#/definitions/ellipse"},
+                {"$ref": "#/definitions/g"},
+                {"$ref": "#/definitions/multipoint"},
+                {"$ref": "#/definitions/orbit"},
+                {"$ref": "#/definitions/point"},
+                {"$ref": "#/definitions/polygon"},
+                {"$ref": "#/definitions/polyline"},
+                {"$ref": "#/definitions/rect"},
+                {"$ref": "#/definitions/content-item"},
+                {"$ref": "#/definitions/text"}
+            ]},
+            "type": "array"
+        },
+        "metadata": {"type": "object"},
+        "schema": {
+            "items": {"$ref": "#/definitions/schema"},
+            "type": "array"
+        },
+        "version": {
+            "enum": ["2.0.3"],
+            "type": "string"
+        }
+    },
+    "required": [
+        "version",
+        "document",
+        "items"
+    ],
+    "type": "object"
+}
+

@@ -41,7 +41,7 @@ export type nvgItemsType = (
 )[];
 export default class NvgParser {
 	private parseXML(xmlDoc: string) {
-		let domParser;
+		let domParser: DOMParser;
 		if (isBrowser) {
 			domParser = new DOMParser();
 		} else {
@@ -49,7 +49,7 @@ export default class NvgParser {
 			domParser = new temp();
 		}
 		const xml = domParser.parseFromString(xmlDoc, 'text/xml');
-		if (xml && (xml.firstChild.nodeName == 'nvg' || xml.firstChild.nodeName.split(':')[1] == 'nvg')) {
+		if (xml && (xml.firstElementChild.nodeName == 'nvg' || xml.firstElementChild.nodeName.split(':')[1] == 'nvg')) {
 			//check that we actually are parsing NVG but ignore namespace
 			const version = xml.firstElementChild.getAttribute('version');
 			const nodes = xml.firstChild.childNodes;
@@ -158,6 +158,11 @@ export default class NvgParser {
 
 					if (node.childNodes.length) {
 						this.tagAttributes(node.childNodes, item);
+					}
+					if (item.drawable == 'text') {
+						//This is for handling the text element
+						const textElement = node as Element;
+						item['content'] = textElement.firstElementChild.textContent;
 					}
 					if (item.drawable == 'g' || item.drawable == 'composite') {
 						item.items = [];

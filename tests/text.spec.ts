@@ -25,6 +25,6 @@ describe('Sample Text input test', () => {
 		expect(text.y).to.be.equal(32.23745768948515);
 		expect(text.rotation).to.be.equal(45);
 		expect(text.uri).to.be.equal('urn:int:000040');
-		expect(text.content).to.be.equal('TEXT');
+		expect(text.content).to.be.equal('\n\t\tTEXT\n\t\t\n\t\t');
 	});
 });
