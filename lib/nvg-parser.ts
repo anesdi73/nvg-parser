@@ -16,7 +16,9 @@ import {
 	SymbolizedContentIncludingUnknownDefaultRendering,
 	HttpsTideActNatoIntSchemas201210NvgJsJsonSchema
 } from './nvg.data.2.0';
-
+import { isBrowser, isNode } from 'browser-or-node';
+import jsDom from 'jsdom';
+const { JSDOM } = jsDom;
 const ElementNodeType = 1;
 const nvgSchemaVersion = '2.0.3';
 export type nvgItemsType = (
@@ -37,9 +39,16 @@ export type nvgItemsType = (
 	| SymbolizedContentIncludingUnknownDefaultRendering
 	| Text
 )[];
-export class NvgParser {
+export default class NvgParser {
 	private parseXML(xmlDoc: string) {
-		const xml = new DOMParser().parseFromString(xmlDoc, 'text/xml');
+		let domParser;
+		if (isBrowser) {
+			domParser = new DOMParser();
+		} else {
+			const temp = new JSDOM().window.DOMParser;
+			domParser = new temp();
+		}
+		const xml = domParser.parseFromString(xmlDoc, 'text/xml');
 		if (xml && (xml.firstChild.nodeName == 'nvg' || xml.firstChild.nodeName.split(':')[1] == 'nvg')) {
 			//check that we actually are parsing NVG but ignore namespace
 			const version = xml.firstElementChild.getAttribute('version');
