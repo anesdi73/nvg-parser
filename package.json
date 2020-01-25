@@ -2,8 +2,8 @@
 	"name": "nvg-parser",
 	"version": "0.0.1",
 	"description": "An NVG (Nato Vector Graphics) parser",
-	"main": "dist/nvg-parser.js",
-	"types": "dist/nvg-parser.d.ts",
+	"main": "dist/lib/nvg-parser.js",
+	"types": "dist/lib/nvg-parser.d.ts",
 	"scripts": {
 		"build": "tsc",
 		"test": "mocha -r ts-node/register tests/**/*.spec.ts"

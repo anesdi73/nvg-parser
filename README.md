@@ -38,3 +38,8 @@ Output should be '2.0.2'
 ```sh
 npm run test
 ```
+
+## Additional notes
+
+NVG types definition file (nvg.data.2.0.d.ts) generated with json-schema-to-typescript@6.1.3 (later version generated typescript code not compatible with typescript 2.9.2) from (nvg.data.2.0.xsd + nvg.types.2.0.xsd)
+This library version was developed to be compatible with Angular 6 so the maximum possible version of Typescript is 2.9.2
