@@ -1,5 +1,7 @@
 # nvg-parser
 
+[![Build Status](https://travis-ci.org/anesdi73/nvg-parser.svg?branch=master)](https://travis-ci.org/anesdi73/nvg-parser) [![Coverage Status](https://coveralls.io/repos/github/anesdi73/nvg-parser/badge.svg)](https://coveralls.io/github/anesdi73/nvg-parser)
+
 An nvg parser in TypeScript
 
 Based in the previous work done at https://github.com/spatialillusions/nvg (Thanks!!)

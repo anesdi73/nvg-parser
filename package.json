@@ -15,7 +15,9 @@
 			"lib/**/*.ts"
 		],
 		"exclude": [
-			"**/*.d.ts"
+			"**/*.d.ts",
+			"lib/nvg.data.2.0.ts",
+			"createDomParser.browser.ts"
 		],
 		"extension": [
 			".ts"
