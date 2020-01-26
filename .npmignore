@@ -4,3 +4,4 @@ types/
 dist/types
 dist/tests/*.d.ts*
 .vscode/
+coverage/

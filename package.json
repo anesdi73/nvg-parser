@@ -6,7 +6,30 @@
 	"types": "dist/lib/nvg-parser.d.ts",
 	"scripts": {
 		"build": "tsc",
-		"test": "mocha -r ts-node/register tests/**/*.spec.ts"
+		"test": "nyc mocha",
+		"coverage": "nyc report --reporter=text-lcov | coveralls"
+	},
+	"nyc": {
+		"all": true,
+		"include": [
+			"lib/**/*.ts"
+		],
+		"exclude": [
+			"**/*.d.ts"
+		],
+		"extension": [
+			".ts"
+		],
+		"require": [
+			"ts-node/register"
+		],
+		"reporter": [
+			"text-summary",
+			"html",
+			"lcov"
+		],
+		"sourceMap": true,
+		"instrument": true
 	},
 	"repository": {
 		"type": "git",
@@ -25,9 +48,13 @@
 		"@types/chai": "4.1.7",
 		"@types/mocha": "^5.2.7",
 		"chai": "^4.2.0",
+		"coveralls": "^3.0.9",
+		"istanbul": "^0.4.5",
 		"mocha": "^7.0.0",
 		"ts-node": "^8.6.2",
-		"typescript": "^2.9.2"
+		"typescript": "^2.9.2",
+		"nyc": "^11.6.0",
+		"source-map-support": "^0.5.4"
 	},
 	"dependencies": {
 		"jsdom": "15.2.1"
