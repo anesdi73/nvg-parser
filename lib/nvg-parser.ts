@@ -14,6 +14,7 @@ import {
 	Polyline,
 	RectangleWithTrueGroundMeasurementIdenticalGroundDistanceForOppositeSidesOfTheRectangle,
 	SymbolizedContentIncludingUnknownDefaultRendering,
+	Text,
 	HttpsTideActNatoIntSchemas201210NvgJsJsonSchema
 } from './nvg.data.2.0';
 import createDomParser from './createDomParser.node';
