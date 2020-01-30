@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2008 sp1 (http://www.altova.com) by david (test) -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" targetNamespace="http://purl.org/dc/terms/" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:import namespace="http://purl.org/dc/elements/1.1/" schemaLocation="dc.xsd"/>
+	<xsd:include schemaLocation="ndms.xsd"/>
+	<xsd:include schemaLocation="dcterms.xsd"/>
+	<xsd:annotation>
+		<xsd:documentation xml:lang="en">top level Metadata containers for Schema Designers</xsd:documentation>
+	</xsd:annotation>
+	<xsd:complexType name="Metadata_Choice_Container">
+		<xsd:sequence>
+			<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				<xsd:element ref="dc:title"/>
+				<xsd:element ref="dc:creator"/>
+				<xsd:element ref="dc:subject"/>
+				<xsd:element ref="dc:description"/>
+				<xsd:element ref="dc:publisher"/>
+				<xsd:element ref="dc:contributor"/>
+				<xsd:element ref="dc:date"/>
+				<xsd:element ref="dc:type"/>
+				<xsd:element ref="dc:format"/>
+				<xsd:element ref="dc:identifier"/>
+				<xsd:element ref="dc:source"/>
+				<xsd:element ref="dc:language"/>
+				<xsd:element ref="dc:relation"/>
+				<xsd:element ref="dc:coverage"/>
+				<xsd:element ref="dc:rights"/>
+				<xsd:element ref="dcterms:alternative"/>
+				<xsd:element ref="dcterms:tableOfContents"/>
+				<xsd:element ref="dcterms:abstract"/>
+				<xsd:element ref="dcterms:created"/>
+				<xsd:element ref="dcterms:valid"/>
+				<xsd:element ref="dcterms:available"/>
+				<xsd:element ref="dcterms:issued"/>
+				<xsd:element ref="dcterms:modified"/>
+				<xsd:element ref="dcterms:dateAccepted"/>
+				<xsd:element ref="dcterms:dateCopyrighted"/>
+				<xsd:element ref="dcterms:dateSubmitted"/>
+				<xsd:element ref="dcterms:extent"/>
+				<xsd:element ref="dcterms:medium"/>
+				<xsd:element ref="dcterms:isVersionOf"/>
+				<xsd:element ref="dcterms:hasVersion"/>
+				<xsd:element ref="dcterms:isReplacedBy"/>
+				<xsd:element ref="dcterms:replaces"/>
+				<xsd:element ref="dcterms:isRequiredBy"/>
+				<xsd:element ref="dcterms:requires"/>
+				<xsd:element ref="dcterms:isPartOf"/>
+				<xsd:element ref="dcterms:hasPart"/>
+				<xsd:element ref="dcterms:isReferencedBy"/>
+				<xsd:element ref="dcterms:references"/>
+				<xsd:element ref="dcterms:isFormatOf"/>
+				<xsd:element ref="dcterms:hasFormat"/>
+				<xsd:element ref="dcterms:conformsTo"/>
+				<xsd:element ref="dcterms:spatial"/>
+				<xsd:element ref="dcterms:temporal"/>
+				<xsd:element ref="dcterms:audience"/>
+				<xsd:element ref="dcterms:accrualMethod"/>
+				<xsd:element ref="dcterms:accrualPeriodicity"/>
+				<xsd:element ref="dcterms:accrualPolicy"/>
+				<xsd:element ref="dcterms:instructionalMethod"/>
+				<xsd:element ref="dcterms:provenance"/>
+				<xsd:element ref="dcterms:rightsHolder"/>
+				<xsd:element ref="dcterms:mediator"/>
+				<xsd:element ref="dcterms:educationLevel"/>
+				<xsd:element ref="dcterms:accessRights"/>
+				<xsd:element ref="dcterms:license"/>
+				<xsd:element ref="dcterms:bibliographicCitation"/>
+				<xsd:element ref="dcterms:security.policy"/>
+				<xsd:element ref="dcterms:security.classifcation"/>
+				<xsd:element ref="dcterms:security.category"/>
+				<xsd:element ref="dcterms:date.acquired"/>
+				<xsd:element ref="dcterms:date.cut-off"/>
+				<xsd:element ref="dcterms:date.closed"/>
+				<xsd:element ref="dcterms:date.declared"/>
+				<xsd:element ref="dcterms:date.nextVersionDue"/>
+				<xsd:element ref="dcterms:date.updatingFrequency"/>
+				<xsd:element ref="dcterms:relation.isDefinedBy"/>
+				<xsd:element ref="dcterms:relation.providesDefinitionOf"/>
+				<xsd:element ref="dcterms:relation.reasonForRedaction"/>
+				<xsd:element ref="dcterms:relation.redaction"/>
+				<xsd:element ref="dcterms:format.mediaFormat"/>
+				<xsd:element ref="dcterms:format.extentQualifier"/>
+				<xsd:element ref="dcterms:subject.category"/>
+				<xsd:element ref="dcterms:rights.copyright"/>
+			</xsd:choice>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="Metadata_Container">
+		<xsd:sequence>
+			<xsd:element ref="dc:title" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dc:creator" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dc:subject" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dc:description" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dc:publisher" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dc:contributor" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dc:date" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dc:type" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dc:format" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dc:identifier" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dc:source" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dc:language" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dc:relation" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dc:coverage" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dc:rights" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dcterms:alternative" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dcterms:tableOfContents" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dcterms:abstract" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dcterms:created" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dcterms:valid" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dcterms:available" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dcterms:issued" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dcterms:modified" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dcterms:dateAccepted" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dcterms:dateCopyrighted" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dcterms:dateSubmitted" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dcterms:extent" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dcterms:medium" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dcterms:isVersionOf" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dcterms:hasVersion" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dcterms:isReplacedBy" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dcterms:replaces" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dcterms:isRequiredBy" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dcterms:requires" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dcterms:isPartOf" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dcterms:hasPart" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dcterms:isReferencedBy" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dcterms:references" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dcterms:isFormatOf" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dcterms:hasFormat" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dcterms:conformsTo" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dcterms:spatial" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dcterms:temporal" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dcterms:audience" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dcterms:accrualMethod" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dcterms:accrualPeriodicity" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dcterms:accrualPolicy" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dcterms:instructionalMethod" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dcterms:provenance" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dcterms:rightsHolder" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dcterms:mediator" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dcterms:educationLevel" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dcterms:accessRights" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dcterms:license" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dcterms:bibliographicCitation" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dcterms:security.policy" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dcterms:security.classifcation" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dcterms:security.category" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dcterms:date.acquired" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dcterms:date.cut-off" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dcterms:date.closed" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dcterms:date.declared" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dcterms:date.nextVersionDue" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dcterms:date.updatingFrequency" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dcterms:relation.isDefinedBy" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dcterms:relation.providesDefinitionOf" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dcterms:relation.reasonForRedaction" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dcterms:relation.redaction" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dcterms:format.mediaFormat" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dcterms:format.extentQualifier" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dcterms:subject.category" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element ref="dcterms:rights.copyright" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

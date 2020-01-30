@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns="http://tide.act.nato.int/schemas/2009/10/nvg" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tide.act.nato.int/schemas/2009/10/nvg" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.5.0">
+	<xsd:simpleType name="IdentifierType">
+		<xsd:annotation>
+			<xsd:documentation>
+				Wrapper type for item identification inside a
+				capabilities/filter document
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="versionType">
+		<xsd:annotation>
+			<xsd:documentation>Version number composed of a major version number and a minor version number and revision number. ex: 1.5.0.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="KeyTypeAttribute">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="duration"/>
+			<xsd:enumeration value="dateTime"/>
+			<xsd:enumeration value="time"/>
+			<xsd:enumeration value="date"/>
+			<xsd:enumeration value="gYearMonth"/>
+			<xsd:enumeration value="gYear"/>
+			<xsd:enumeration value="gMonthDay"/>
+			<xsd:enumeration value="gMonth"/>
+			<xsd:enumeration value="boolean"/>
+			<xsd:enumeration value="string"/>
+			<xsd:enumeration value="base64binary"/>
+			<xsd:enumeration value="hexBinary"/>
+			<xsd:enumeration value="float"/>
+			<xsd:enumeration value="decimal"/>
+			<xsd:enumeration value="integer"/>
+			<xsd:enumeration value="long"/>
+			<xsd:enumeration value="double"/>
+			<xsd:enumeration value="anyURI"/>
+			<xsd:enumeration value="QName"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="SimpleDataType">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="key" type="xsd:QName" use="required"/>
+				<xsd:attribute name="type" type="KeyTypeAttribute" use="optional"/>
+				<xsd:attribute name="description" type="xsd:string" use="optional"/>
+				<xsd:attribute name="label" type="xsd:string" use="optional"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="SimpleFieldType">
+		<xsd:attribute name="id" type="xsd:QName" use="required"/>
+		<xsd:attribute name="type" type="KeyTypeAttribute" use="required"/>
+		<xsd:attribute name="description" type="xsd:string" use="optional"/>
+		<xsd:attribute name="label" type="xsd:string" use="optional"/>
+	</xsd:complexType>
+	<xsd:complexType name="SchemaType">
+		<xsd:sequence>
+			<xsd:element name="SimpleField" type="SimpleFieldType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="schemaId" type="xsd:string" use="optional"/>
+	</xsd:complexType>
+	<xsd:complexType name="ExtendedDataType">
+		<xsd:sequence>
+			<xsd:element name="SimpleData" type="SimpleDataType" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+		<xsd:attribute name="schemaUrl" type="xsd:anyURI" use="optional"/>
+	</xsd:complexType>
+	<xsd:simpleType name="LongLatType">
+		<xsd:annotation>
+			<xsd:documentation>Restricted by patterns definition of a (Longitude,Latitude) couple based on a plane (x,y) representation of the map</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="([+,\-])?((0)?[0-9])?[0-9](\.\d{1,20})?,([+,\-])?([0-8])?[0-9](\.\d{1,20})?"/>
+			<xsd:pattern value="([+,\-])?1[0-7][0-9](\.\d{1,20})?,([+,\-])?([0-8])?[0-9](\.\d{1,20})?"/>
+			<xsd:pattern value="([+,\-])?180(\.(0){1,20})?,([+,\-])?([0-8])?[0-9](\.\d{1,20})?"/>
+			<xsd:pattern value="([+,\-])?((0)?[0-9])?[0-9](\.\d{1,20})?,([+,\-])?90(\.(0){1,20})?"/>
+			<xsd:pattern value="([+,\-])?1[0-7][0-9](\.\d{1,20})?,([+,\-])?90(\.(0){1,20})?"/>
+			<xsd:pattern value="([+,\-])?180(\.(0){1,20})?,([+,\-])?90(\.(0){1,20})?"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ListOfLongLatType">
+		<xsd:annotation>
+			<xsd:documentation>Combined type for defining the list of lat,long geo point</xsd:documentation>
+		</xsd:annotation>
+		<xsd:list itemType="LongLatType"/>
+	</xsd:simpleType>
+	<xsd:simpleType name="longitudeType">
+		<xsd:annotation>
+			<xsd:documentation>Range for longitudes: in decimal degrees using WGS-84 datum, closed interval [-180.0 to 180.0].</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:double">
+			<xsd:minInclusive value="-180"/>
+			<xsd:maxInclusive value="180"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="latitudeType">
+		<xsd:annotation>
+			<xsd:documentation>Range for latitudes:: in decimal degrees using WGS-84 datum, closed interval [-90.0 to 90.0].</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:double">
+			<xsd:minInclusive value="-90"/>
+			<xsd:maxInclusive value="90"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="app6aType">
+		<xsd:annotation>
+			<xsd:documentation>APP6a code</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="app6a:"/>
+			<xsd:pattern value="app6a:[\w\-*]{15}"/>
+			<xsd:pattern value="app6A:"/>
+			<xsd:pattern value="app6A:[\w\-*]{15}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="m2525bType">
+		<xsd:annotation>
+			<xsd:documentation>2525b code</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="2525b:"/>
+			<xsd:pattern value="2525b:[\w\-*]{15}"/>
+			<xsd:pattern value="2525B:"/>
+			<xsd:pattern value="2525B:[\w\-*]{15}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="iconSymbolType">
+		<xsd:annotation>
+			<xsd:documentation>icon symbol code</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="icon:.+"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="SymbolCodeTypeOld" final="union">
+		<xsd:annotation>
+			<xsd:documentation>All symbol code defined</xsd:documentation>
+		</xsd:annotation>
+		<xsd:union memberTypes="app6aType m2525bType iconSymbolType"/>
+	</xsd:simpleType>
+</xsd:schema>

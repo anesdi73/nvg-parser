@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:nvg="http://tide.act.nato.int/schemas/2008/10/nvg" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tide.act.nato.int/schemas/2008/10/nvg" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:include schemaLocation="nvg.capabilities.1.4.xsd"/>
+	<xsd:include schemaLocation="nvg.filter.1.4.xsd"/>
+	<xsd:include schemaLocation="nvg.data.1.4.xsd"/>
+</xsd:schema>

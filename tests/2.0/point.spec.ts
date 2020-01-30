@@ -1,9 +1,9 @@
 import { expect } from 'chai';
 import 'mocha';
-import NvgParser from '../lib/nvg-parser';
-import { Point } from '../lib/nvg.data.2.0';
+import NvgParser from '../../lib/2.0/nvg-parser';
+import { Point } from '../../lib/2.0/nvg.data.2.0';
 
-describe('Sample Point input test', () => {
+describe('NVG 2.0 Sample Point input test', () => {
 	it('should parse it properly', () => {
 		const xml = `<?xml version="1.0" encoding="UTF-8"?>
 		<nvg version="2.0.2" classification="NOT CLASSIFIED" xmlns="https://tide.act.nato.int/schemas/2012/10/nvg">

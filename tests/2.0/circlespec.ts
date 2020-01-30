@@ -1,9 +1,9 @@
 import { expect } from 'chai';
 import 'mocha';
-import NvgParser from '../lib/nvg-parser';
-import { Style, Circle } from '../lib/nvg.data.2.0';
+import NvgParser from '../../lib/2.0/nvg-parser';
+import { Style, Circle } from '../../lib/2.0/nvg.data.2.0';
 
-describe('Sample Circle input test', () => {
+describe('NVG 2.0 Sample Circle input test', () => {
 	it('should parse it properly', () => {
 		const xml = `<?xml version="1.0" encoding="UTF-8"?>
 		<nvg version="2.0.2" classification="NOT CLASSIFIED" xmlns="https://tide.act.nato.int/schemas/2012/10/nvg">

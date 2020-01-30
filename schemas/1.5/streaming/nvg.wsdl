@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tide.act.nato.int/wsdl/nvg" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:nvg="http://tide.act.nato.int/schemas/2008/10/nvg" xmlns:dcmi="http://purl.org/dc/dcmitype/" targetNamespace="http://tide.act.nato.int/wsdl/nvg">
+	<wsdl:types>
+		<xsd:schema targetNamespace="http://tide.act.nato.int/wsdl/nvg" elementFormDefault="qualified" attributeFormDefault="unqualified">
+			<xsd:import namespace="http://tide.act.nato.int/schemas/2008/10/nvg" schemaLocation="nvg.1.4.xsd"/>
+			<xsd:element name="GetCapabilities">
+				<xsd:complexType/>
+			</xsd:element>
+			<xsd:element name="GetCapabilitiesResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element ref="nvg:nvg_capabilities" minOccurs="0"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="GetNvg">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element ref="nvg:nvg_filter" minOccurs="0"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="GetNvgResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element ref="nvg:nvg" minOccurs="0"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="GetCapabilitiesRequest">
+		<wsdl:part name="parameters" element="tns:GetCapabilities"/>
+	</wsdl:message>
+	<wsdl:message name="GetCapabilitiesResponse">
+		<wsdl:part name="parameters" element="tns:GetCapabilitiesResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetNvgRequest">
+		<wsdl:part name="parameters" element="tns:GetNvg"/>
+	</wsdl:message>
+	<wsdl:message name="GetNvgResponse">
+		<wsdl:part name="parameters" element="tns:GetNvgResponse"/>
+	</wsdl:message>
+	<wsdl:portType name="NVGPortType">
+		<wsdl:operation name="GetCapabilities">
+			<wsdl:input message="tns:GetCapabilitiesRequest"/>
+			<wsdl:output message="tns:GetCapabilitiesResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetNvg">
+			<wsdl:input message="tns:GetNvgRequest"/>
+			<wsdl:output message="tns:GetNvgResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+</wsdl:definitions>
