@@ -2,12 +2,11 @@
 	"name": "nvg-parser",
 	"version": "0.1.5",
 	"description": "An NVG (Nato Vector Graphics) parser",
-	"main": "dist/lib/2.0/nvg-parser.js",
-	"types": "dist/lib/2.0/nvg-parser.d.ts",
+	"main": "dist/lib/nvg-parser.js",
+	"types": "dist/lib/nvg-parser.d.ts",
 	"scripts": {
 		"build": "tsc",
 		"test": "nyc mocha",
-		"testw": "nyc mocha --watch",
 		"coverage": "nyc report --reporter=text-lcov | coveralls"
 	},
 	"nyc": {

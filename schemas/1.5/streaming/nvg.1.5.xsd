@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema xmlns:nvg="http://tide.act.nato.int/schemas/2009/10/nvg" xmlns:nvg14="http://tide.act.nato.int/schemas/2008/10/nvg" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tide.act.nato.int/schemas/2009/10/nvg" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.5.0">
-	<!--NVG Filter remains using the version 1.4 in the overall version 1.5-->
-	<xsd:import namespace="http://tide.act.nato.int/schemas/2008/10/nvg" schemaLocation="nvg.filter.1.4.xsd"/>
-	<!--version 1.5 formats updated-->
-	<xsd:include schemaLocation="nvg.capabilities.1.5.xsd"/>
-	<xsd:include schemaLocation="nvg.data.1.5.xsd"/>
-</xsd:schema>
