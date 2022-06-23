@@ -59,7 +59,7 @@
 		"source-map-support": "^0.5.4"
 	},
 	"dependencies": {
-		"jsdom": "15.2.1"
+		"jsdom": "16.5.0"
 	},
 	"browser": {
 		"./dist/lib/createDomParser.node.js": "./dist/lib/createDomParser.browser.js",
